@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="NB">
+      <ObjectId>57</ObjectId>
+      <IntrospectionTimestamp>2017-06-14.13:08:16</IntrospectionTimestamp>
+      <CreatedTimestamp>2016-05-12.17:14:48</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-14.13:19:29</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>29</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="APPQOSSYS">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="CTXSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="XDB">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="ANONYMOUS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="MDSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="HR">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="FLOWS_FILES">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="APEX_040000">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="VITCHENKO_14">
+      <ObjectId>48</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="VITCHENKO_BS">
+      <ObjectId>50</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="VITCHENKO_CH">
+      <ObjectId>51</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="VITCHENKO_6">
+      <ObjectId>52</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="BIBLIO">
+      <ObjectId>53</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="BT">
+      <ObjectId>54</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="VT">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="IB">
+      <ObjectId>56</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="DIARY">
+      <ObjectId>58</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <sequence id="29" parent="2" name="PERSON_SC">
+      <ObjectId>21018</ObjectId>
+      <CreatedTimestamp>2016-05-14.13:19:14</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-14.13:19:14</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>10</CacheSize>
+    </sequence>
+    <sequence id="30" parent="2" name="PHONES_SC">
+      <ObjectId>21017</ObjectId>
+      <CreatedTimestamp>2016-05-14.13:19:14</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-14.13:19:14</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>10</CacheSize>
+    </sequence>
+    <table id="31" parent="2" name="PERSON">
+      <ObjectId>20913</ObjectId>
+      <CreatedTimestamp>2016-05-12.17:14:48</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-13.16:19:21</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="32" parent="2" name="PHONES">
+      <ObjectId>21013</ObjectId>
+      <CreatedTimestamp>2016-05-14.12:54:00</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-14.12:54:05</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="33" parent="2" name="POLE">
+      <ObjectId>20919</ObjectId>
+      <CreatedTimestamp>2016-05-12.17:14:49</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-12.17:14:49</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <routine id="34" parent="2" name="PERSON_GENERATE">
+      <ObjectId>21004</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <CreatedTimestamp>2016-05-13.16:25:24</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-14.13:19:29</ModifiedTimestamp>
+    </routine>
+    <column id="35" parent="31" name="PERSON_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="31" name="LNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+    </column>
+    <column id="37" parent="31" name="FNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+    </column>
+    <column id="38" parent="31" name="PHOTO">
+      <Position>4</Position>
+      <DataType>BLOB|0</DataType>
+    </column>
+    <column id="39" parent="31" name="ADRESS">
+      <Position>5</Position>
+      <DataType>VARCHAR2(200)|0</DataType>
+    </column>
+    <column id="40" parent="31" name="POLE">
+      <Position>6</Position>
+      <DataType>NUMBER(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="31" name="EMAIL">
+      <Position>7</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+    </column>
+    <index id="42" parent="31" name="PERSON_PK">
+      <ObjectId>20916</ObjectId>
+      <CreatedTimestamp>2016-05-12.17:14:49</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-12.17:14:49</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>PERSON_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="31" name="PERSON_PK">
+      <ModifiedTimestamp>2016-05-12.17:14:49</ModifiedTimestamp>
+      <ColNames>PERSON_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PERSON_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="44" parent="31" name="PERSON_POLE_FK">
+      <ModifiedTimestamp>2016-05-12.17:14:50</ModifiedTimestamp>
+      <ColNames>POLE</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>POLE</RefTableName>
+      <RefKeyName>POLE_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="45" parent="32" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="32" name="PH_NUMBER">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+    </column>
+    <column id="47" parent="32" name="PERSON_ID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="48" parent="32" name="PHONES_PK">
+      <ObjectId>21014</ObjectId>
+      <CreatedTimestamp>2016-05-14.12:54:05</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-14.12:54:05</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="32" name="PHONES_PK">
+      <ModifiedTimestamp>2016-05-14.12:54:05</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PHONES_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="33" name="POLE_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="33" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+    </column>
+    <index id="52" parent="33" name="POLE_PK">
+      <ObjectId>20920</ObjectId>
+      <CreatedTimestamp>2016-05-12.17:14:49</CreatedTimestamp>
+      <ModifiedTimestamp>2016-05-12.17:14:49</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>POLE_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="33" name="POLE_PK">
+      <ModifiedTimestamp>2016-05-12.17:14:49</ModifiedTimestamp>
+      <ColNames>POLE_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>POLE_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <argument id="54" parent="34" name="STR_IN">
+      <DataType>NUMBER|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>
