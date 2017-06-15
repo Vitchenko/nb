@@ -3,6 +3,7 @@ package com.home.viv;
 import com.home.viv.DAO.DBConnect;
 import com.home.viv.DAO.OraCRUD;
 import com.home.viv.Objects.Person;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -51,7 +52,7 @@ public class Menu {
                 switch (s) {
                     case 1:
                         persons=oraCRUD.getAllPersons();
-                        System.out.println(persons);
+                        printPersonList(persons);
                         break;
                     case 2:
                         dbConnect.addNewEmployee(st);
@@ -78,7 +79,8 @@ public class Menu {
     }
 
     void printPersonList(ArrayList<Person> persons){
-        for(int i=0; i++; i < persons.size()){
+        for(int i=0; i < persons.size(); i++ ){
+            System.out.println(persons.get(i));
 
         }
     }
