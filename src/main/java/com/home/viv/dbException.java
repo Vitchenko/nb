@@ -10,23 +10,19 @@ public class dbException {
 
 
 
-    public class NoSuchEmployeeException extends SQLException {
+    public class NoSuchPersonException extends SQLException {
 
-        public NoSuchEmployeeException() {
+        public NoSuchPersonException() {
             super();
         }
 
-        public NoSuchEmployeeException(String message) {
+        public NoSuchPersonException(String message) {
             super(message);
         }
 
-        public NoSuchEmployeeException(Throwable cause) {
-            super(cause);
-        }
 
-        public NoSuchEmployeeException(String reason, Throwable cause) {
-            super(reason, cause);
-        }
+
+
     }
 
 

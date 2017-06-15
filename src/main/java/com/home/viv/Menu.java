@@ -58,10 +58,12 @@ public class Menu {
                         dbConnect.addNewEmployee(st);
                         break;
                     case 3:
-                        dbConnect.deleteEmployeeById(st);
+                        //dbConnect.deleteEmployeeById(st);
                         break;
                     case 4:
-                        //dbConnect.GetAllPep(st);
+                        System.out.println("Insert number of deleted people&:");
+                        s = in.nextInt();
+                        oraCRUD.deletePerson(s);
                         break;
                     case 0:
                         System.out.println("Exit Program!!!");
