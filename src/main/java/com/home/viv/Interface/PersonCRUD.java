@@ -10,10 +10,11 @@ import java.util.ArrayList;
  * Created by viv on 15.06.2017.
  */
 public interface PersonCRUD {
-    void createPerson(Statement statement, String Lname, String Fame, String Fname, String Adress, Pole pole, ArrayList<String> phoneNum);
-    void editPerson(Statement statement, int Person_id, String Lname, String Fame, String Fname,String Adress, Pole pole, ArrayList<String> phoneNum);
-    void DeletePerson(Statement statement, int Person_id);
-    Person FindPerson(Statement statement, int Person_id, String Lname, String Fame, String Fname, String Adress, Pole pole, ArrayList<String> phoneNum);
-    ArrayList<Person> GetAllPerson(Statement statement);
+
+    void createPerson(String lname, String fname, String adress, String email, int pole);
+    void editPerson(int Person_id, String lname, String fname, String adress, String email, int pole);
+    void deletePerson(int Person_id);
+    Person findPerson(int Person_id, String lname, String fname, String adress, String email, int pole);
+    ArrayList<Person> getAllPersons();
 
 }

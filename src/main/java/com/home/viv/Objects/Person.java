@@ -9,68 +9,79 @@ import com.home.viv.Objects.Pole;
  */
 public class Person {
 
-    private int Person_id;
-    private String Lname;
-    private String Fname;
-    private String Adress;
-    private Pole pole;
-    private ArrayList<String> phoneNum=new ArrayList<String>();
+    private int person_id;
+    private String fname;
+    private String lname;
+    private String adress;
+    private String email;
+    private int pole;
 
-    public Person(int person_id, String lname, String fname, String adress, Pole pole, ArrayList<String> phoneNum)
-    {
-        Person_id = person_id;
-        Lname = lname;
-        Fname = fname;
-        Adress = adress;
+    public Person(int person_id, String fname, String lname, String adress, String email, int pole) {
+        this.person_id = person_id;
+        this.fname = fname;
+        this.lname = lname;
+        this.adress = adress;
+        this.email = email;
         this.pole = pole;
-        this.phoneNum = phoneNum;
     }
 
     public int getPerson_id() {
-        return Person_id;
+        return person_id;
     }
 
     public void setPerson_id(int person_id) {
-        Person_id = person_id;
-    }
-
-    public String getLname() {
-        return Lname;
-    }
-
-    public void setLname(String lname) {
-        Lname = lname;
+        this.person_id = person_id;
     }
 
     public String getFname() {
-        return Fname;
+        return fname;
     }
 
     public void setFname(String fname) {
-        Fname = fname;
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     public String getAdress() {
-        return Adress;
+        return adress;
     }
 
     public void setAdress(String adress) {
-        Adress = adress;
+        this.adress = adress;
     }
 
-    public Pole getPole() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getPole() {
         return pole;
     }
 
-    public void setPole(Pole pole) {
+    public void setPole(int pole) {
         this.pole = pole;
     }
 
-    public ArrayList<String> getPhoneNum() {
-        return phoneNum;
-    }
-
-    public void setPhoneNum(ArrayList<String> phoneNum) {
-        this.phoneNum = phoneNum;
+    @Override
+    public String toString() {
+        return "Person{" +
+                "person_id=" + person_id +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                ", adress='" + adress + '\'' +
+                ", email='" + email + '\'' +
+                ", pole=" + pole +
+                '}';
     }
 }

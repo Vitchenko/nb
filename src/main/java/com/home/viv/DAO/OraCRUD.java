@@ -19,63 +19,71 @@ public class OraCRUD implements PersonCRUD{
 //implementation DBConnect for Oracle DB
 
     private Statement statement;
-    DBConnect dbConnect;
 
-    public void createPerson(String Lname, String Fame, String Fname, String Adress, Pole pole, ArrayList<String> phoneNum) {
+
+    public OraCRUD(Statement statement) {
+        this.statement = statement;
+    }
+
+    public void createPerson(String lname, String fname, String adress, String email, int pole) {
 
     }
 
-    public void GetAllPep (Statement st){
+    public void editPerson(int Person_id, String lname, String fname, String adress, String email, int pole) {
 
-        try {
-            System.out.println();
-            ResultSet result1 = st.executeQuery("SELECT PERSON_ID,LNAME,FNAME,ADRESS,EMAIL,POLE FROM PERSON");
+    }
 
-            StringBuffer sb = new StringBuffer(75);
+    public void deletePerson(int Person_id) {
 
-            while (result1.next()) {
+    }
+
+    public Person findPerson(int Person_id, String lname, String fname, String adress, String email, int pole) {
+        return null;
+    }
 
 
-                sb=sb.append(String.valueOf(result1.getRow()))
-                        .append(" ID: ").append(String.valueOf(result1.getInt("PERSON_ID")))
-                        .append(" Last Name: ").append(result1.getString("LNAME"))
-                        .append(" First Name: ").append(result1.getString("FNAME"))
-                        .append(" Address: ").append(result1.getString("ADRESS"))
-                        .append(" EMAIL ").append(result1.getString("EMAIL"));
-                System.out.println(sb);
-                sb =sb.delete(0,sb.length()) ;}
 
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    public ArrayList<Person> getAllPersons() {
+
+        ArrayList<Person> persons = new ArrayList<Person>();
+
+    try {
+
+        ResultSet rs = statement.executeQuery("SELECT PERSON_ID,LNAME,FNAME,ADRESS,EMAIL,POLE FROM PERSON");
+        StringBuffer sb = new StringBuffer(75);
+
+
+
+        int person_id;
+        String fname;
+        String lname;
+        String adress;
+        String email;
+        int pole;
+
+        while (rs.next()) {
+
+            person_id = rs.getInt("PERSON_ID");
+            fname = rs.getString("FNAME");
+            lname = rs.getString("LNAME");
+            adress = rs.getString("ADRESS");
+            email = rs.getString("EMAIL");
+            pole = rs.getInt("POLE");
+
+
+            Person pr = new Person(person_id, fname, lname, adress, email, pole);
+
+            persons.add(pr);
+
 
         }
+    }catch(SQLException e){
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, e);
+            e.printStackTrace();
     }
+        return persons;
 
-
-
-
-
-
-
-
-
-
-
-
-
-    public void editPerson(int Person_id, String Lname, String Fame, String Fname, String Adress, Pole pole, ArrayList<String> phoneNum) {
 
     }
 
-    public void DeletePerson(int Person_id) {
-
-    }
-
-    public Person FindPerson(int Person_id, String Lname, String Fame, String Fname, String Adress, Pole pole, ArrayList<String> phoneNum) {
-        return null;//for test
-    }
-
-    public ArrayList<Person> GetAllPerson() {
-        return null;//for test
-    }
 }
