@@ -28,35 +28,35 @@ public class OraCRUD implements PersonCRUD{
 
     public void createPerson(String lname, String fname, String adress, String email, int pole) {
 
-        Scanner scanner= new Scanner(System.in);
-
-        System.out.println("For create new person insert all parameters:");
-        //in.nextLine();
-        System.out.println("Family Name:");
-        String firstName = scanner.nextLine();
-        System.out.println("Name:");
-        String lastName = scanner.nextLine();
-        System.out.println("Adress:");
-        String email = scanner.nextLine();
-        System.out.println("Email:");
-        String phone = scanner.nextLine();
-        System.out.println("Pole (1- Male| 2- Female):");
-        Int Salary = scanner.nextLine();
-
-        String sqlstr="INSERT INTO PERSON (PERSON_ID, FNAME, LNAME, ADRESS, EMAIL, POLE) VALUES(PERSON_SC.nextval, 20," +
-                " 'Ivanov', 'Ivan','vk@vk.com',1)";
-
-        try {
-            //System.out.println(sqlstr);
-            statement.executeUpdate(sqlstr);
-            System.out.println("New Person successfully added");
-            System.out.println();
-        }
-        catch (SQLException Ex) {
-
-            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, Ex);
-            System.out.println(Ex);
-        }
+//        Scanner scanner= new Scanner(System.in);
+//
+//        System.out.println("For create new person insert all parameters:");
+//        //in.nextLine();
+//        System.out.println("Family Name:");
+//        String firstName = scanner.nextLine();
+//        System.out.println("Name:");
+//        String lastName = scanner.nextLine();
+//        System.out.println("Adress:");
+//        String email = scanner.nextLine();
+//        System.out.println("Email:");
+//        String phone = scanner.nextLine();
+//        System.out.println("Pole (1- Male| 2- Female):");
+//        Int Salary = scanner.nextLine();
+//
+//        String sqlstr="INSERT INTO PERSON (PERSON_ID, FNAME, LNAME, ADRESS, EMAIL, POLE) VALUES(PERSON_SC.nextval, 20," +
+//                " 'Ivanov', 'Ivan','vk@vk.com',1)";
+//
+//        try {
+//            //System.out.println(sqlstr);
+//            statement.executeUpdate(sqlstr);
+//            System.out.println("New Person successfully added");
+//            System.out.println();
+//        }
+//        catch (SQLException Ex) {
+//
+//            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, Ex);
+//            System.out.println(Ex);
+//        }
 
 
     }

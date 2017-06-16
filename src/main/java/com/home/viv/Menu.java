@@ -55,7 +55,7 @@ public class Menu {
                         printPersonList(persons);
                         break;
                     case 2:
-                        dbConnect.addNewEmployee(st);
+                        //dbConnect.addNewEmployee(st);
                         break;
                     case 3:
                         //dbConnect.deleteEmployeeById(st);
