@@ -11,10 +11,11 @@ import java.util.ArrayList;
  */
 public interface PersonCRUD {
 
-    void createPerson(String lname, String fname, String adress, String email, int pole);
-    void editPerson(int Person_id, String lname, String fname, String adress, String email, int pole);
+    void createPerson(String fname, String lname, String adress, String email, int pole, String ph_number);
+    void editPerson(int Person_id, String lname, String fname, String adress, String email, int pole, String ph_number);
     void deletePerson(int Person_id);
-    Person findPerson(int Person_id, String lname, String fname, String adress, String email, int pole);
+    Person findPerson(int Person_id);
+    //продумать! как сделать поиск по остальным параметрам??? String lname, String fname, String adress, String email, int pole, String ph_number
     ArrayList<Person> getAllPersons();
 
 }

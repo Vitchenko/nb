@@ -30,7 +30,7 @@ public class Menu {
         //печатает заголовок меню
         System.out.println("");
         System.out.println("(1) List all persons <1 + Enter> ");
-        System.out.println("(2) All information about person (press) <2 + Enter>");
+        System.out.println("(2) All information about person for id <2 + Enter>");
         System.out.println("(3) Insert Person <3 + Enter> ");
         System.out.println("(4) Delete Person <4 + Enter> ");
         System.out.println("(5) Update Person <5 + Enter> ");
@@ -55,11 +55,29 @@ public class Menu {
                         printPersonList(persons);
                         break;
                     case 2:
-                        //dbConnect.addNewEmployee(st);
+                        System.out.println("Insert PERSON_ID:");
+                        int id = in.nextInt();
+                        System.out.println(oraCRUD.findPerson(id));
                         break;
                     case 3:
-                        //dbConnect.deleteEmployeeById(st);
+                        String ff = in.nextLine();//очистака буфера
+                        System.out.println("For create new person insert all parameters:");
+                        System.out.println("Family Name:");
+                        String fname = in.nextLine();
+                        System.out.println("Last Name:");
+                        String lname = in.nextLine();
+                        System.out.println("Adress:");
+                        String adress = in.nextLine();
+                        System.out.println("Email:");
+                        String email = in.nextLine();
+                        System.out.println("Phone:");
+                        String phone = in.nextLine();
+                        System.out.println("Pole (1- Male| 2- Female):");
+                        int pole = Integer.parseInt(in.nextLine());
+                        oraCRUD.createPerson(fname,lname,adress,email,pole,phone);
+                        System.out.println("Successfully create person " + fname +" "+ lname);
                         break;
+
                     case 4:
                         System.out.println("Insert number of deleted people&:");
                         s = in.nextInt();

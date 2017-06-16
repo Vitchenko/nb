@@ -26,42 +26,30 @@ public class OraCRUD implements PersonCRUD{
         this.statement = statement;
     }
 
-    public void createPerson(String lname, String fname, String adress, String email, int pole) {
+    public void createPerson(String fname, String lname, String adress, String email, int pole, String ph_number) {
 
-//        Scanner scanner= new Scanner(System.in);
-//
-//        System.out.println("For create new person insert all parameters:");
-//        //in.nextLine();
-//        System.out.println("Family Name:");
-//        String firstName = scanner.nextLine();
-//        System.out.println("Name:");
-//        String lastName = scanner.nextLine();
-//        System.out.println("Adress:");
-//        String email = scanner.nextLine();
-//        System.out.println("Email:");
-//        String phone = scanner.nextLine();
-//        System.out.println("Pole (1- Male| 2- Female):");
-//        Int Salary = scanner.nextLine();
-//
-//        String sqlstr="INSERT INTO PERSON (PERSON_ID, FNAME, LNAME, ADRESS, EMAIL, POLE) VALUES(PERSON_SC.nextval, 20," +
-//                " 'Ivanov', 'Ivan','vk@vk.com',1)";
-//
-//        try {
-//            //System.out.println(sqlstr);
-//            statement.executeUpdate(sqlstr);
-//            System.out.println("New Person successfully added");
-//            System.out.println();
-//        }
-//        catch (SQLException Ex) {
-//
-//            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, Ex);
-//            System.out.println(Ex);
-//        }
+
+        String sqlstr="INSERT ALL INTO PERSON (PERSON_ID, LNAME, PERSON.FNAME, PERSON.ADRESS, PERSON.Pole, PERSON.Email) " +
+                "VALUES (Person_sc.NEXTVAL, '"+ lname +"', '"+fname+"', '"+adress+"', '"+pole+"', '+ "+email+"') " +
+                "INTO PHONES (PHONES.PHONES_ID, PHONES.PH_NUMBER, PHONES.PERSON_ID) VALUES (Phones_sc.NEXTVAL, '"+ph_number+"', " +
+                "Person_sc.currval ) select * from dual";
+
+
+        try {
+
+            statement.executeUpdate(sqlstr);
+            System.out.println();
+        }
+        catch (SQLException Ex) {
+
+            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, Ex);
+            System.out.println(Ex);
+        }
 
 
     }
 
-    public void editPerson(int Person_id, String lname, String fname, String adress, String email, int pole) {
+    public void editPerson(int Person_id, String lname, String fname, String adress, String email, int pole, String ph_number) {
 
     }
 
@@ -81,8 +69,44 @@ public class OraCRUD implements PersonCRUD{
 
     }
 
-    public Person findPerson(int Person_id, String lname, String fname, String adress, String email, int pole) {
-        return null;
+    public Person findPerson(int Person_id) {
+
+        //Добавить проверку что такой Person_id существует
+
+        Person pr=null;
+
+        try {
+
+            ResultSet rs = statement.executeQuery("SELECT P.PERSON_ID,P.LNAME,P.FNAME,P.ADRESS,P.EMAIL,P.POLE, F.PH_NUMBER FROM PERSON P, PHONES f WHERE P.PERSON_ID=f.PERSON_ID AND P.PERSON_ID="+Person_id);
+            StringBuffer sb = new StringBuffer(75);
+
+            int person_id;
+            String fname;
+            String lname;
+            String adress;
+            String email;
+            int pole;
+            String ph_number;
+
+            while (rs.next()) {
+
+                person_id = rs.getInt("PERSON_ID");
+                fname = rs.getString("FNAME");
+                lname = rs.getString("LNAME");
+                adress = rs.getString("ADRESS");
+                email = rs.getString("EMAIL");
+                pole = rs.getInt("POLE");
+                ph_number= rs.getString("PH_NUMBER");
+
+                pr = new Person(person_id, fname, lname, adress, email, pole, ph_number);
+
+            }
+        }catch(SQLException e){
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, e);
+            e.printStackTrace();
+        }
+        return pr;
+
     }
 
 
@@ -93,7 +117,7 @@ public class OraCRUD implements PersonCRUD{
 
     try {
 
-        ResultSet rs = statement.executeQuery("SELECT PERSON_ID,LNAME,FNAME,ADRESS,EMAIL,POLE FROM PERSON");
+        ResultSet rs = statement.executeQuery("SELECT P.PERSON_ID,P.LNAME,P.FNAME,P.ADRESS,P.EMAIL,P.POLE, F.PH_NUMBER FROM PERSON P, PHONES f WHERE P.PERSON_ID=f.PERSON_ID");
         StringBuffer sb = new StringBuffer(75);
 
         int person_id;
@@ -102,6 +126,7 @@ public class OraCRUD implements PersonCRUD{
         String adress;
         String email;
         int pole;
+        String ph_number;
 
         while (rs.next()) {
 
@@ -111,8 +136,9 @@ public class OraCRUD implements PersonCRUD{
             adress = rs.getString("ADRESS");
             email = rs.getString("EMAIL");
             pole = rs.getInt("POLE");
+            ph_number= rs.getString("PH_NUMBER");
 
-            Person pr = new Person(person_id, fname, lname, adress, email, pole);
+            Person pr = new Person(person_id, fname, lname, adress, email, pole, ph_number);
 
             persons.add(pr);
 

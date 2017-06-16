@@ -15,14 +15,16 @@ public class Person {
     private String adress;
     private String email;
     private int pole;
+    private String ph_number;
 
-    public Person(int person_id, String fname, String lname, String adress, String email, int pole) {
+    public Person(int person_id, String fname, String lname, String adress, String email, int pole, String ph_number) {
         this.person_id = person_id;
         this.fname = fname;
         this.lname = lname;
         this.adress = adress;
         this.email = email;
         this.pole = pole;
+        this.ph_number = ph_number;
     }
 
     public int getPerson_id() {
@@ -73,6 +75,14 @@ public class Person {
         this.pole = pole;
     }
 
+    public String getPh_number() {
+        return ph_number;
+    }
+
+    public void setPh_number(String ph_number) {
+        this.ph_number = ph_number;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -82,6 +92,7 @@ public class Person {
                 ", adress='" + adress + '\'' +
                 ", email='" + email + '\'' +
                 ", pole=" + pole +
+                ", ph_number='" + ph_number + '\'' +
                 '}';
     }
 }
